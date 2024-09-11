@@ -4,6 +4,7 @@ import trataErros from "./erros/funcoesErro.js";
 import { contaPalavras } from './index.js';
 import { montaSaidaArquivo } from './helpers.js';
 import { Command } from 'commander';
+import chalk, { Chalk } from 'chalk';
 
 const program = new Command();
 
@@ -25,7 +26,7 @@ program
 
         try {
             processaArquivo(caminhoTexto, caminhoDestino);
-            console.log('texto processado com sucesso');
+            console.log(chalk.green('texto processado com sucesso'));
             
         } catch(erro) {
             console.log('ocorreu um erro no processamento', erro);
